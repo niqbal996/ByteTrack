@@ -56,8 +56,8 @@ class MOTDataset(Dataset):
         im_ann = self.coco.loadImgs(id_)[0]
         width = im_ann["width"]
         height = im_ann["height"]
-        frame_id = im_ann["frame_id"]
-        video_id = im_ann["video_id"]
+        frame_id = im_ann["id"]
+        video_id = im_ann["id"]
         anno_ids = self.coco.getAnnIds(imgIds=[int(id_)], iscrowd=False)
         annotations = self.coco.loadAnns(anno_ids)
         objs = []
